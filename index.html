@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e-commerce website by Kidus</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+
+<body style="background-color: rgb(70, 53, 53);">
+  <!-- Topbar Start -->
+  <div class="topbar-first-strip">
+    <div>
+      <a href="" class="text-decoration-none">About</a>
+      <a href="" class="text-decoration-none">Contact</a>
+      <a href="" class="text-decoration-none">Help</a>
+      <a href="" class="text-decoration-none">FAQs</a>
+    </div>
+
+    <!-- My Account Button Start -->
+    <div class="dropdown-menu">
+      <button class="menu-btn">My Account</button>
+      <div class="menu-content">
+        <a class="links" href="#">Sign in</a>
+        <a class="links" href="#">Sign up</a>
+      </div>
+    </div>
+    <script>
+      let dropdownBtn = document.querySelector('.menu-btn');
+      let menuContent = document.querySelector('.menu-content');
+      dropdownBtn.addEventListener('click', () => {
+        if (menuContent.style.display === "") {
+          menuContent.style.display = "block";
+        } else {
+          menuContent.style.display = "";
+        }
+      })
+    </script>
+    <!-- My Account Button End -->
+
+    <!-- Currency Button Start -->
+    <div class="dropdown-menu">
+      <button class="menu-btn">USD</button>
+      <div class="menu-content">
+        <a class="links" href="#">BIRR</a>
+        <a class="links" href="#">EUR</a>
+        <a class="links" href="#">GBP</a>
+        <a class="links" href="#">CAD</a>
+      </div>
+    </div>
+
+    <script>
+      let dropdownBtn = document.querySelector('.menu-btn');
+      let menuContent = document.querySelector('.menu-content');
+      dropdownBtn.addEventListener('click', () => {
+        if (menuContent.style.display === "") {
+          menuContent.style.display = "block";
+        } else {
+          menuContent.style.display = "";
+        }
+      })
+    </script>
+    <!-- Currency Button End -->
+
+    <!-- Language Button Start -->
+    <div class="dropdown-menu">
+      <button class="menu-btn">EN</button>
+      <div class="menu-content">
+        <a class="links" href="#">አማርኛ</a>
+        <a class="links" href="#">AFAAN OROMO</a>
+        <a class="links" href="#">FR</a>
+        <a class="links" href="#">AR</a>
+        <a class="links" href="#">RU</a>
+      </div>
+    </div>
+    <!-- Language Button End -->
+  </div>
+  <!-- Topbar End -->
+
+  <!-- Second Bar -->
+  <div class="topbar-second-strip">
+    <!-- Logo -->
+    <img src="./img/kiduslogo.png" alt="logo">
+    <!-- Logo End -->
+
+    <!-- Search Bar -->
+    <form action="" method="">
+      <input type="text" name="" id="" placeholder="Search">
+      <button type="submit" class="ssearch">Search</button>
+    </form>
+
+    <!-- Customer Service -->
+    <div class="text-align">
+      <h2>Customer Service</h2>
+      <h5>+251917001417</h5>
+    </div>
+  </div>
+  <!-- Top Second Bar End -->
+
+  <!-- Second Bar -->
+  <div class="second-bar">
+
+    <!-- Categories -->
+
+    <div class="dropdown">
+      <button onclick="myFunction()" class="dropbtn">Categories</button>
+      <div id="myDropdown" class="dropdown-content">
+        <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+        <a href="#about">Dress</a>
+        <a href="#base">Shirt</a>
+        <a href="#blog">Jeans</a>
+        <a href="#contact">Swimwear</a>
+        <a href="#custom">Sportswear</a>
+        <a href="#support">Jumpsuits</a>
+        <a href="#tools">Jackets</a>
+        <a href="#tools">Shoes</a>
+      </div>
+    </div>
+
+    <script>
+      /* When the user clicks on the button,
+      toggle between hiding and showing the dropdown content */
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+
+      function filterFunction() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        div = document.getElementById("myDropdown");
+        a = div.getElementsByTagName("a");
+        for (i = 0; i < a.length; i++) {
+          txtValue = a[i].textContent || a[i].innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+          } else {
+            a[i].style.display = "none";
+          }
+        }
+      }
+    </script>
+    <!-- Categories End -->
+
+        <!-- Shop -->
+        <a href="index.html"><button class="dropbtn">Home</button></a>
+        <!-- Shop End -->
+        
+        <!-- Contact Us -->
+        <a href="contact.html"><button class="dropbtn">Contact Us</button></a>
+        <!-- Contact Us End -->
+        
+        <!-- My cart -->
+        <a href="MyCart.html"><button class="dropbtn">My Cart</button></a>
+        <!-- My cart -->
+        
+        <!-- Liked items -->
+        <a href="LikedItems.html"><button class="dropbtn">Liked Items</button></a>
+        <!-- Liked items End -->
+  </div>
+
+
+
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Verdana, sans-serif;
+    }
+
+    .mySlides {
+      display: none;
+    }
+
+    img {
+      vertical-align: middle;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active {
+      background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+      .text {
+        font-size: 11px
+      }
+    }
+  </style>
+
+  <div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <img src="./img/cameras.jpg" width="1000" height="400">
+      <div class="text">Cameras</div>
+    </div>
+
+    <div class="mySlides fade">
+      <img src="./img/cars.jpeg" width="1000" height="400">
+      <div class="text">Cars</div>
+    </div>
+
+    <div class="mySlides fade">
+      <img src="./img/laptop.jpg" width="1000" height="400">
+      <div class="text">Laptops</div>
+    </div>
+  
+    <div class="mySlides fade">
+      <img src="./img/phones.jpg" width="1000" height="400">
+      <div class="text">Phones</div>
+    </div>
+
+    <div class="mySlides fade">
+      <img src="./img/Womenfw.jpg" width="1000" height="400">
+      <div class="text">Women's Footwear</div>
+    </div>
+
+    <div class="mySlides fade">
+      <img src="./img/menfw.jpg" width="1000" height="400">
+      <div class="text">Men's Footwear</div>
+    </div>
+
+    <div class="mySlides fade">
+      <img src="./img/purses.jpeg" width="1000" height="400">
+      <div class="text">Purses</div>
+    </div>
+
+    <div class="mySlides fade">
+      <img src="./img/sportswear.jpg" width="1000" height="400">
+      <div class="text">Sportswear</div>
+    </div>
+
+    <div class="mySlides fade">
+      <img src="./img/Jewelries.jpg" width="1000" height="400">
+      <div class="text">Jewelries</div>
+    </div>
+
+    <div class="mySlides fade">
+      <img src="./img/watches.jpg" width="1000" height="400">
+      <div class="text">Watches</div>
+    </div>
+
+  </div>
+  <br>
+
+  <div style="text-align:center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+  </script>
+
+<div class="container-fluid pt-5 pb-3">
+  <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Featured
+      Products</span></h2>
+  <div class="row px-xl-5">
+    <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+      <div class="product-item bg-light mb-4">
+        <div class="product-img position-relative overflow-hidden">
+          <img class="img-fluid w-100" src="./img/laptop.jpg" alt="">
+          <div class="product-action">
+            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-heart"></i></a>
+            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+          </div>
+        </div>
+        <div class="text-center py-4">
+          <a class="h6 text-decoration-none text-truncate" href="">ASUS TUF Gaming F15 Gaming Laptop</a>
+          <div class="d-flex align-items-center justify-content-center mt-2">
+            <h5>$699.00</h5>
+            <h6 class="text-muted ml-2"><del>$799.00</del></h6>
+          </div>
+          <div class="d-flex align-items-center justify-content-center mb-1">
+            <small class="fa fa-star text-primary mr-1"></small>
+            <small class="fa fa-star text-primary mr-1"></small>
+            <small class="fa fa-star text-primary mr-1"></small>
+            <small class="fa fa-star text-primary mr-1" ></small>
+            <small class="fa fa-star text-primary mr-1"></small>
+            <small>(99)</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+  <div class="product-item bg-light mb-4">
+    <div class="product-img position-relative overflow-hidden">
+      <img class="img-fluid w-100" src="./img/camera.jpg" alt="">
+      <div class="product-action">
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-heart"></i></a>
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+      </div>
+    </div>
+    <div class="text-center py-4">
+      <a class="h6 text-decoration-none text-truncate" href="">Nikon D850 FX-Format Digital SLR Camera</a>
+      <div class="d-flex align-items-center justify-content-center mt-2">
+        <h5>$2796.95</h5>
+        <h6 class="text-muted ml-2"><del>$2996.95</del></h6>
+      </div>
+      <div class="d-flex align-items-center justify-content-center mb-1">
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star-half-alt text-primary mr-1"></small>
+        <small>(99)</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+  <div class="product-item bg-light mb-4">
+    <div class="product-img position-relative overflow-hidden">
+      <img class="img-fluid w-100" src="./img/Jordan1.jpeg" alt="">
+      <div class="product-action">
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-heart"></i></a>
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+      </div>
+    </div>
+    <div class="text-center py-4">
+      <a class="h6 text-decoration-none text-truncate" href="">Nike Air Jordan 1</a>
+      <div class="d-flex align-items-center justify-content-center mt-2">
+        <h5>$160.00</h5>
+        <h6 class="text-muted ml-2"><del>$200.00</del></h6>
+      </div>
+      <div class="d-flex align-items-center justify-content-center mb-1">
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star-half-alt text-primary mr-1"></small>
+        <small>(99)</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+  <div class="product-item bg-light mb-4">
+    <div class="product-img position-relative overflow-hidden">
+      <img class="img-fluid w-100" src="./img/Bicycles.jpeg" alt="">
+      <div class="product-action">
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-heart"></i></a>
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+      </div>
+    </div>
+    <div class="text-center py-4">
+      <a class="h6 text-decoration-none text-truncate" href="">Huffy Hardtail Mountain Bike</a>
+      <div class="d-flex align-items-center justify-content-center mt-2">
+        <h5>$219.99</h5>
+        <h6 class="text-muted ml-2"><del>$250.00</del></h6>
+      </div>
+      <div class="d-flex align-items-center justify-content-center mb-1">
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star-half-alt text-primary mr-1"></small>
+        <small>(99)</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+  <div class="product-item bg-light mb-4">
+    <div class="product-img position-relative overflow-hidden">
+      <img class="img-fluid w-100" src="./img/iphone14.jpeg" alt="">
+      <div class="product-action">
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-heart"></i></a>
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+      </div>
+    </div>
+    <div class="text-center py-4">
+      <a class="h6 text-decoration-none text-truncate" href="">iPhone14 Pro Max</a>
+      <div class="d-flex align-items-center justify-content-center mt-2">
+        <h5>$1399.00</h5>
+        <h6 class="text-muted ml-2"><del>$1499.00</del></h6>
+      </div>
+      <div class="d-flex align-items-center justify-content-center mb-1">
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star-half-alt text-primary mr-1"></small>
+        <small>(99)</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+  <div class="product-item bg-light mb-4">
+    <div class="product-img position-relative overflow-hidden">
+      <img class="img-fluid w-100" src="./img/macbookpro.jpg" alt="">
+      <div class="product-action">
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-heart"></i></a>
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+      </div>
+    </div>
+    <div class="text-center py-4">
+      <a class="h6 text-decoration-none text-truncate" href="">Mac Book Pro</a>
+      <div class="d-flex align-items-center justify-content-center mt-2">
+        <h5>$1599.99</h5>
+        <h6 class="text-muted ml-2"><del>$2000.00</del></h6>
+      </div>
+      <div class="d-flex align-items-center justify-content-center mb-1">
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star-half-alt text-primary mr-1"></small>
+        <small>(99)</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+  <div class="product-item bg-light mb-4">
+    <div class="product-img position-relative overflow-hidden">
+      <img class="img-fluid w-100" src="./img/rayban.jpeg" alt="">
+      <div class="product-action">
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-heart"></i></a>
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+      </div>
+    </div>
+    <div class="text-center py-4">
+      <a class="h6 text-decoration-none text-truncate" href="">RayBan Sun Glasses</a>
+      <div class="d-flex align-items-center justify-content-center mt-2">
+        <h5>$213.00</h5>
+        <h6 class="text-muted ml-2"><del>$250.00</del></h6>
+      </div>
+      <div class="d-flex align-items-center justify-content-center mb-1">
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star-half-alt text-primary mr-1"></small>
+        <small>(99)</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+  <div class="product-item bg-light mb-4">
+    <div class="product-img position-relative overflow-hidden">
+      <img class="img-fluid w-100" src="./img/denim.jpeg" alt="">
+      <div class="product-action">
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-heart"></i></a>
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+      </div>
+    </div>
+    <div class="text-center py-4">
+      <a class="h6 text-decoration-none text-truncate" href="">Denim UStorm Trousars</a>
+      <div class="d-flex align-items-center justify-content-center mt-2">
+        <h5>$110.00</h5>
+        <h6 class="text-muted ml-2"><del>$130.00</del></h6>
+      </div>
+      <div class="d-flex align-items-center justify-content-center mb-1">
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star-half-alt text-primary mr-1"></small>
+        <small>(99)</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+  <div class="product-item bg-light mb-4">
+    <div class="product-img position-relative overflow-hidden">
+      <img class="img-fluid w-100" src="./img/rolex.jpeg" alt="">
+      <div class="product-action">
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-heart"></i></a>
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+      </div>
+    </div>
+    <div class="text-center py-4">
+      <a class="h6 text-decoration-none text-truncate" href="">Rolex Yacht-Master</a>
+      <div class="d-flex align-items-center justify-content-center mt-2">
+        <h5>$35,900.00</h5>
+        <h6 class="text-muted ml-2"><del>$37,000.00</del></h6>
+      </div>
+      <div class="d-flex align-items-center justify-content-center mb-1">
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star-half-alt text-primary mr-1"></small>
+        <small>(99)</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+  <div class="product-item bg-light mb-4">
+    <div class="product-img position-relative overflow-hidden">
+      <img class="img-fluid w-100" src="./img/s22.jpeg" alt="">
+      <div class="product-action">
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-heart"></i></a>
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+      </div>
+    </div>
+    <div class="text-center py-4">
+      <a class="h6 text-decoration-none text-truncate" href="">Samsung Galaxy S22 Ultra</a>
+      <div class="d-flex align-items-center justify-content-center mt-2">
+        <h5>$1199.99</h5>
+        <h6 class="text-muted ml-2"><del>$1299.99</del></h6>
+      </div>
+      <div class="d-flex align-items-center justify-content-center mb-1">
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star-half-alt text-primary mr-1"></small>
+        <small>(99)</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+  <div class="product-item bg-light mb-4">
+    <div class="product-img position-relative overflow-hidden">
+      <img class="img-fluid w-100" src="./img/gucciheels.jpeg" alt="">
+      <div class="product-action">
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-heart"></i></a>
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+      </div>
+    </div>
+    <div class="text-center py-4">
+      <a class="h6 text-decoration-none text-truncate" href="">Gucci Heels</a>
+      <div class="d-flex align-items-center justify-content-center mt-2">
+        <h5>$500</h5>
+        <h6 class="text-muted ml-2"><del>$600</del></h6>
+      </div>
+      <div class="d-flex align-items-center justify-content-center mb-1">
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star-half-alt text-primary mr-1"></small>
+        <small>(99)</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+  <div class="product-item bg-light mb-4">
+    <div class="product-img position-relative overflow-hidden">
+      <img class="img-fluid w-100" src="./img/espresso machine.jpg" alt="">
+      <div class="product-action">
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-heart"></i></a>
+        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+      </div>
+    </div>
+    <div class="text-center py-4">
+      <a class="h6 text-decoration-none text-truncate" href="">Breville Barista Touch Espresso Machine</a>
+      <div class="d-flex align-items-center justify-content-center mt-2">
+        <h5>$799</h5>
+        <h6 class="text-muted ml-2"><del>$899</del></h6>
+      </div>
+      <div class="d-flex align-items-center justify-content-center mb-1">
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star text-primary mr-1"></small>
+        <small class="fa fa-star-half-alt text-primary mr-1"></small>
+        <small>(99)</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bottom Bar Start -->
+<div class="footer">
+<div class="footer1">
+<h3 class="footer-title">Get in touch</h3> 
+<p><i class="fa fa-map-marker"></i> Addis Ababa, Ethiopia</p>
+<p><i class="fa fa-envelope"></i> kidus@proton.me</p>
+<p><i class="fa fa-phone"></i> +251 917 001417</p>
+</div>
+
+<div class="footer2">
+  <h3 class="footer-title">My Account</h3>
+  <p><i class="fa fa-home"></i>Home</p>
+  <p><i class="fa fa-shopping-cart"></i> My Cart</p>
+  <p><i class="fa fa-heart"></i> Liked Items</p>
+</div>
+
+<div class="footer3">
+  <h3 class="footer-title">Follow Us</h3>
+  <a class="iconprop" href="www.instagram.com/kidus.efrem"><p><i class="fa fa-instagram"></i></a>
+  <a class="iconprop" href="www.twitter.com/ItsKidus"><p><i class="fa fa-twitter"></i></a>
+  <a class="iconprop" href="www.facebook.com/ItsKidus"><p><i class="fa fa-facebook"></i></a>
+</div>
+</div>
+<!-- Bottom Bar End -->
+
+
+
+</body>
+<footer>
+  <link rel="stylesheet" href="./js/main.js">
+  </footer>
+
+</html>

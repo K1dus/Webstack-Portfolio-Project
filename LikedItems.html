@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-commerce website by Kidus</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+
+<body style="background-color: rgb(70, 53, 53);" class="likedbody">
+    <!-- Topbar Start -->
+    <div class="topbar-first-strip">
+        <div>
+            <a href="" class="text-decoration-none">About</a>
+            <a href="" class="text-decoration-none">Contact</a>
+            <a href="" class="text-decoration-none">Help</a>
+            <a href="" class="text-decoration-none">FAQs</a>
+        </div>
+
+        <!-- My Account Button Start -->
+        <div class="dropdown-menu">
+            <button class="menu-btn">My Account</button>
+            <div class="menu-content">
+                <a class="links" href="#">Sign in</a>
+                <a class="links" href="#">Sign up</a>
+            </div>
+        </div>
+        <script>
+    let dropdownBtn = document.querySelector('.menu-btn');
+    let menuContent = document.querySelector('.menu-content');
+    dropdownBtn.addEventListener('click', () => {
+        if (menuContent.style.display === "") {
+        menuContent.style.display = "block";
+        } else {
+        menuContent.style.display = "";
+        }
+        })
+        </script>
+        <!-- My Account Button End -->
+
+        <!-- Currency Button Start -->
+        <div class="dropdown-menu">
+            <button class="menu-btn">USD</button>
+            <div class="menu-content">
+                <a class="links" href="#">BIRR</a>
+                <a class="links" href="#">EUR</a>
+                <a class="links" href="#">GBP</a>
+                <a class="links" href="#">CAD</a>
+            </div>
+        </div>
+
+        <script>
+            let dropdownBtn = document.querySelector('.menu-btn');
+            let menuContent = document.querySelector('.menu-content');
+            dropdownBtn.addEventListener('click', () => {
+                if (menuContent.style.display === "") {
+                    menuContent.style.display = "block";
+                } else {
+                    menuContent.style.display = "";
+                }
+            })
+        </script>
+        <!-- Currency Button End -->
+
+        <!-- Language Button Start -->
+        <div class="dropdown-menu">
+            <button class="menu-btn">EN</button>
+            <div class="menu-content">
+                <a class="links" href="#">አማርኛ</a>
+                <a class="links" href="#">AFAAN OROMO</a>
+                <a class="links" href="#">FR</a>
+                <a class="links" href="#">AR</a>
+                <a class="links" href="#">RU</a>
+            </div>
+        </div>
+        <!-- Language Button End -->
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Second Bar -->
+    <div class="topbar-second-strip">
+        <!-- Logo -->
+        <img src="./img/kiduslogo.png" alt="logo">
+        <!-- Logo End -->
+
+        <!-- Search Bar -->
+        <form action="" method="">
+            <input type="text" name="" id="" placeholder="Search">
+            <button type="submit" class="ssearch">Search</button>
+        </form>
+
+        <!-- Customer Service -->
+        <div class="text-align">
+            <h2>Customer Service</h2>
+            <h5>+251917001417</h5>
+        </div>
+    </div>
+    <!-- Top Second Bar End -->
+
+    <!-- Second Bar -->
+    <div class="second-bar">
+
+        <!-- Categories -->
+
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Categories</button>
+            <div id="myDropdown" class="dropdown-content">
+                <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                <a href="#about">Dress</a>
+                <a href="#base">Shirt</a>
+                <a href="#blog">Jeans</a>
+                <a href="#contact">Swimwear</a>
+                <a href="#custom">Sportswear</a>
+                <a href="#support">Jumpsuits</a>
+                <a href="#tools">Jackets</a>
+                <a href="#tools">Shoes</a>
+            </div>
+        </div>
+
+        <script>
+            /* When the user clicks on the button,
+            toggle between hiding and showing the dropdown content */
+            function myFunction() {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
+
+            function filterFunction() {
+                var input, filter, ul, li, a, i;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                div = document.getElementById("myDropdown");
+                a = div.getElementsByTagName("a");
+                for (i = 0; i < a.length; i++) {
+                    txtValue = a[i].textContent || a[i].innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        a[i].style.display = "";
+                    } else {
+                        a[i].style.display = "none";
+                    }
+                }
+            }
+        </script>
+        <!-- Categories End -->
+
+        <!-- Shop -->
+        <a href="index.html"><button class="dropbtn">Home</button></a>
+        <!-- Shop End -->
+
+        <!-- Contact Us -->
+        <a href="contact.html"><button class="dropbtn">Contact Us</button></a>
+        <!-- Contact Us End -->
+
+        <!-- My cart -->
+        <a href="MyCart.html"><button class="dropbtn">My Cart</button></a>
+        <!-- My cart -->
+
+        <!-- Liked items -->
+        <a href="LikedItems.html"><button class="dropbtn">Liked Items</button></a>
+        <!-- Liked items End -->
+    </div>
+
+<!-- Title -->
+
+<div class="Liheader">
+    <h1>Liked Items</h1>
+</div>
+
+<!-- Title End -->
+
+<!-- Description -->
+<div class="lidesc1">
+    <h2 class="lihead">Description</h2>
+    <p>
+    <ul class="lidesc2">   
+    <li>Body type---------------Mid-size SLR</li> 
+    <li>Max resolution----------8256 x 5504</li>
+    <li>Effective pixels--------45 megapixels</li>
+    <li>Sensor size-------------Full frame (35.9 x 23.9 mm)</li>
+    <li>Sensor type-------------BSI-CMOS</li>
+    <li>ISO---------------------Auto, 64-25600 (expands to 32-102400)</li>
+    <li>Lens mount--------------Nikon F</li>
+    <li>Focal length mult.------1×</li>
+    <li>Articulated-------------LCD Tilting</li>
+    <li>Screen size-------------3.2″</li>
+    <li>Screen dots-------------2,359,000</li>
+    <li>Max shutter-------------speed 1/8000 sec</li>
+    <li>Format------------------MPEG-4</li>
+    <li>Storage types-----------SD/SDHC/SDXC (UHS-II supported) + XQD</li>
+    <li>USB---------------------USB 3.0 (5 GBit/sec)</li>
+    <li>Weight------------------1005 g (2.22 lb / 35.45 oz)</li>
+    <li>Dimensions--------------146 x 124 x 79 mm (5.75 x 4.88 x 3.11″)</li>
+    <li>GPS---------------------None</li> 
+</ul>
+</p>
+</div>
+
+<img class="likedimages" src="./img/camera.jpg" alt="">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Bottom Bar Start -->
+    <div class="footer">
+        <div class="footer1">
+            <h3 class="footer-title">Get in touch</h3>
+            <p><i class="fa fa-map-marker"></i> Addis Ababa, Ethiopia</p>
+            <p><i class="fa fa-envelope"></i> kidus@proton.me</p>
+            <p><i class="fa fa-phone"></i> +251 917 001417</p>
+        </div>
+
+        <div class="footer2">
+            <h3 class="footer-title">My Account</h3>
+            <p><i class="fa fa-home"></i> Home</p>
+            <p><i class="fa fa-shopping-cart"></i> My Cart</p>
+            <p><i class="fa fa-heart"></i> Liked Items</p>
+        </div>
+
+        <div class="footer3">
+            <h3 class="footer-title">Follow Us</h3>
+            <a class="iconprop" href="www.instagram.com/kidus.efrem">
+                <p><i class="fa fa-instagram"></i>
+            </a>
+            <a class="iconprop" href="www.twitter.com/ItsKidus">
+                <p><i class="fa fa-twitter"></i>
+            </a>
+            <a class="iconprop" href="www.facebook.com/ItsKidus">
+                <p><i class="fa fa-facebook"></i>
+            </a>
+        </div>
+    </div>
+    <!-- Bottom Bar End -->
+
+
+
+</body>
+<footer>
+    <link rel="stylesheet" href="./js/main.js">
+</footer>
+
+</html>
